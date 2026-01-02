@@ -153,8 +153,8 @@ function Settings({ settings, onChange }: SettingsProps) {
                 <input
                   type="range"
                   min="0.5"
-                  max="1.5"
-                  step="0.05"
+                  max="3"
+                  step="0.1"
                   value={settings.clockScale}
                   onChange={handleScaleChange}
                   className="settings-slider"
