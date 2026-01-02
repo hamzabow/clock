@@ -1,32 +1,11 @@
-import { useState, useEffect } from 'react';
+import type { TimeData } from '../hooks/useTime';
 import './MechanicalClock.css';
 
-interface ClockTime {
-  hours: number;
-  minutes: number;
-  seconds: number;
+interface MechanicalClockProps {
+  time: TimeData;
 }
 
-function MechanicalClock() {
-  const [time, setTime] = useState<ClockTime>(getCurrentTime());
-
-  function getCurrentTime(): ClockTime {
-    const now = new Date();
-    return {
-      hours: now.getHours(),
-      minutes: now.getMinutes(),
-      seconds: now.getSeconds(),
-    };
-  }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(getCurrentTime());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+function MechanicalClock({ time }: MechanicalClockProps) {
   // Calculate rotation angles
   const secondAngle = time.seconds * 6; // 360 / 60 = 6 degrees per second
   const minuteAngle = time.minutes * 6 + time.seconds * 0.1; // 6 degrees per minute + smooth movement
