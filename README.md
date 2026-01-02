@@ -29,7 +29,7 @@ A beautiful, responsive SVG-based mechanical clock built with React, TypeScript,
 ### Prerequisites
 
 - Node.js (LTS version recommended)
-- npm or yarn
+- pnpm
 
 ### Installation
 
@@ -41,14 +41,14 @@ git clone https://github.com/YOUR_USERNAME/mechanical-clock.git
 cd mechanical-clock
 
 # Install dependencies
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
 # Start the development server
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
@@ -57,10 +57,10 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 ```bash
 # Create a production build
-npm run build
+pnpm build
 
 # Preview the production build
-npm run preview
+pnpm preview
 ```
 
 ## Usage
