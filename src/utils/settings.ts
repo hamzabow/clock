@@ -16,7 +16,7 @@ export const defaultSettings: ClockSettings = {
   showAnalog: true,
   showDigital: false,
   showDate: false,
-  analogScale: 1,
+  analogScale: 2,
   digitalScale: 1,
   dateScale: 1,
   theme: 'auto',
