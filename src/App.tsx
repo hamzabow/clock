@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTime } from './hooks/useTime'
 import MechanicalClock from './components/MechanicalClock'
 import DigitalClock from './components/DigitalClock'
@@ -12,7 +12,14 @@ function App() {
     showAnalog: true,
     showDigital: false,
     showDate: false,
+    clockScale: 1,
+    theme: 'auto',
   })
+
+  // Apply theme to document
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', settings.theme)
+  }, [settings.theme])
 
   const hasVisibleClock = settings.showAnalog || settings.showDigital
 
@@ -21,8 +28,12 @@ function App() {
       <Settings settings={settings} onChange={setSettings} />
 
       <div className="clock-display">
-        {settings.showAnalog && <MechanicalClock time={time} />}
-        {settings.showDigital && <DigitalClock time={time} />}
+        {settings.showAnalog && (
+          <MechanicalClock time={time} scale={settings.clockScale} />
+        )}
+        {settings.showDigital && (
+          <DigitalClock time={time} scale={settings.clockScale} />
+        )}
         {!hasVisibleClock && (
           <div className="no-clock-message">
             Enable a clock in settings

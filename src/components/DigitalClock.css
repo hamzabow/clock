@@ -1,6 +1,5 @@
 .digital-clock {
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 200;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.9);
@@ -24,8 +23,14 @@
   50% { opacity: 0.2; }
 }
 
+/* Light theme - explicit */
+[data-theme="light"] .digital-clock {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
-  .digital-clock {
+  [data-theme="auto"] .digital-clock {
     color: rgba(0, 0, 0, 0.85);
   }
 }

@@ -23,8 +23,14 @@
   font-weight: 300;
 }
 
+/* Light theme - explicit */
+[data-theme="light"] .no-clock-message {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+/* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
-  .no-clock-message {
+  [data-theme="auto"] .no-clock-message {
     color: rgba(0, 0, 0, 0.35);
   }
 }

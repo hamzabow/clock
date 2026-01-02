@@ -5,8 +5,6 @@
 }
 
 .clock-svg {
-  width: min(80vw, 70vh, 400px);
-  height: min(80vw, 70vh, 400px);
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
 }
 
@@ -100,65 +98,126 @@
   stroke-width: 1;
 }
 
-/* Light theme adjustments */
+/* Light theme - explicit */
+[data-theme="light"] .clock-svg {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+[data-theme="light"] .clock-face-outer {
+  fill: #f5f5f5;
+  stroke: #ccc;
+}
+
+[data-theme="light"] .clock-face-inner {
+  fill: #fafafa;
+  stroke: #ddd;
+}
+
+[data-theme="light"] .minute-marker {
+  stroke: #aaa;
+}
+
+[data-theme="light"] .hour-number {
+  fill: #8b7355;
+}
+
+[data-theme="light"] .hour-marker {
+  stroke: #8b7355;
+}
+
+[data-theme="light"] .hour-hand {
+  stroke: #333;
+}
+
+[data-theme="light"] .hour-hand-tip {
+  fill: #333;
+}
+
+[data-theme="light"] .minute-hand {
+  stroke: #444;
+}
+
+[data-theme="light"] .minute-hand-tip {
+  fill: #444;
+}
+
+[data-theme="light"] .center-cap {
+  fill: #ddd;
+  stroke: #ccc;
+}
+
+[data-theme="light"] .center-cap-inner {
+  fill: #8b7355;
+}
+
+[data-theme="light"] .screw {
+  fill: #ccc;
+  stroke: #bbb;
+}
+
+[data-theme="light"] .screw-slot {
+  stroke: #999;
+}
+
+/* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
-  .clock-svg {
+  [data-theme="auto"] .clock-svg {
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
   }
 
-  .clock-face-outer {
+  [data-theme="auto"] .clock-face-outer {
     fill: #f5f5f5;
     stroke: #ccc;
   }
 
-  .clock-face-inner {
+  [data-theme="auto"] .clock-face-inner {
     fill: #fafafa;
     stroke: #ddd;
   }
 
-  .minute-marker {
+  [data-theme="auto"] .minute-marker {
     stroke: #aaa;
   }
 
-  .hour-number {
+  [data-theme="auto"] .hour-number {
     fill: #8b7355;
   }
 
-  .hour-marker {
+  [data-theme="auto"] .hour-marker {
     stroke: #8b7355;
   }
 
-  .hour-hand {
+  [data-theme="auto"] .hour-hand {
     stroke: #333;
   }
 
-  .hour-hand-tip {
+  [data-theme="auto"] .hour-hand-tip {
     fill: #333;
   }
 
-  .minute-hand {
+  [data-theme="auto"] .minute-hand {
     stroke: #444;
   }
 
-  .minute-hand-tip {
+  [data-theme="auto"] .minute-hand-tip {
     fill: #444;
   }
 
-  .center-cap {
+  [data-theme="auto"] .center-cap {
     fill: #ddd;
     stroke: #ccc;
   }
 
-  .center-cap-inner {
+  [data-theme="auto"] .center-cap-inner {
     fill: #8b7355;
   }
 
-  .screw {
+  [data-theme="auto"] .screw {
     fill: #ccc;
     stroke: #bbb;
   }
 
-  .screw-slot {
+  [data-theme="auto"] .screw-slot {
     stroke: #999;
   }
 }

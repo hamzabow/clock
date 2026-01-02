@@ -7,8 +7,14 @@
   margin-top: 1rem;
 }
 
+/* Light theme - explicit */
+[data-theme="light"] .date-display {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
-  .date-display {
+  [data-theme="auto"] .date-display {
     color: rgba(0, 0, 0, 0.45);
   }
 }

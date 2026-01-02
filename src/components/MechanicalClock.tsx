@@ -3,19 +3,23 @@ import './MechanicalClock.css';
 
 interface MechanicalClockProps {
   time: TimeData;
+  scale?: number;
 }
 
-function MechanicalClock({ time }: MechanicalClockProps) {
+function MechanicalClock({ time, scale = 1 }: MechanicalClockProps) {
   // Calculate rotation angles
   const secondAngle = time.seconds * 6; // 360 / 60 = 6 degrees per second
   const minuteAngle = time.minutes * 6 + time.seconds * 0.1; // 6 degrees per minute + smooth movement
   const hourAngle = (time.hours % 12) * 30 + time.minutes * 0.5; // 30 degrees per hour + smooth movement
+
+  const size = `min(80vw, 70vh, ${400 * scale}px)`;
 
   return (
     <div className="clock-container">
       <svg
         viewBox="0 0 200 200"
         className="clock-svg"
+        style={{ width: size, height: size }}
         aria-label={`Clock showing ${time.hours}:${time.minutes.toString().padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`}
       >
         {/* Clock face background */}

@@ -30,8 +30,15 @@ body {
   align-items: center;
 }
 
+/* Light theme - explicit */
+[data-theme="light"] {
+  color: #213547;
+  background-color: #f0f0f0;
+}
+
+/* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
-  :root {
+  [data-theme="auto"] {
     color: #213547;
     background-color: #f0f0f0;
   }
