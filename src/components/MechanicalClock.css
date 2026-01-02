@@ -1,0 +1,167 @@
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.clock-svg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Clock face */
+.clock-face-outer {
+  fill: #2a2a2a;
+  stroke: #444;
+  stroke-width: 3;
+}
+
+.clock-face-inner {
+  fill: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  fill: #1e1e1e;
+  stroke: #333;
+  stroke-width: 1;
+}
+
+/* Markers */
+.hour-marker {
+  stroke: #d4af37;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.minute-marker {
+  stroke: #888;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+/* Numbers */
+.hour-number {
+  fill: #d4af37;
+  font-family: 'Georgia', serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Hour hand */
+.hour-hand {
+  stroke: #c0c0c0;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.hour-hand-tip {
+  fill: #c0c0c0;
+}
+
+/* Minute hand */
+.minute-hand {
+  stroke: #e0e0e0;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.minute-hand-tip {
+  fill: #e0e0e0;
+}
+
+/* Second hand */
+.second-hand {
+  stroke: #cc3333;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.second-hand-tip {
+  fill: #cc3333;
+}
+
+/* Center cap */
+.center-cap {
+  fill: #444;
+  stroke: #555;
+  stroke-width: 1;
+}
+
+.center-cap-inner {
+  fill: #d4af37;
+}
+
+/* Decorative screws */
+.screw {
+  fill: #555;
+  stroke: #666;
+  stroke-width: 0.5;
+}
+
+.screw-slot {
+  stroke: #333;
+  stroke-width: 1;
+}
+
+/* Light theme adjustments */
+@media (prefers-color-scheme: light) {
+  .clock-svg {
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  }
+
+  .clock-face-outer {
+    fill: #f5f5f5;
+    stroke: #ccc;
+  }
+
+  .clock-face-inner {
+    fill: #fafafa;
+    stroke: #ddd;
+  }
+
+  .minute-marker {
+    stroke: #aaa;
+  }
+
+  .hour-number {
+    fill: #8b7355;
+  }
+
+  .hour-marker {
+    stroke: #8b7355;
+  }
+
+  .hour-hand {
+    stroke: #333;
+  }
+
+  .hour-hand-tip {
+    fill: #333;
+  }
+
+  .minute-hand {
+    stroke: #444;
+  }
+
+  .minute-hand-tip {
+    fill: #444;
+  }
+
+  .center-cap {
+    fill: #ddd;
+    stroke: #ccc;
+  }
+
+  .center-cap-inner {
+    fill: #8b7355;
+  }
+
+  .screw {
+    fill: #ccc;
+    stroke: #bbb;
+  }
+
+  .screw-slot {
+    stroke: #999;
+  }
+}
