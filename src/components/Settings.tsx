@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import type { ClockSettings, Theme } from '../utils/settings';
+import { defaultSettings } from '../utils/settings';
 import './Settings.css';
 
 interface SettingsProps {
@@ -66,6 +67,11 @@ function Settings({ settings, onChange }: SettingsProps) {
 
   const handleThemeChange = (theme: Theme) => {
     onChange({ ...settings, theme });
+  };
+
+  const handleReset = () => {
+    onChange(defaultSettings);
+    setShowAdvanced(false);
   };
 
   return (
@@ -207,6 +213,10 @@ function Settings({ settings, onChange }: SettingsProps) {
                   </button>
                 </div>
               </div>
+
+              <button className="reset-button" onClick={handleReset}>
+                Reset to Defaults
+              </button>
             </div>
           )}
         </div>

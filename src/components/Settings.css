@@ -215,6 +215,26 @@
   cursor: pointer;
 }
 
+/* Reset button */
+.reset-button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  border-radius: 6px;
+  color: rgba(255, 100, 100, 0.8);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.reset-button:hover {
+  background: rgba(255, 100, 100, 0.1);
+  border-color: rgba(255, 100, 100, 0.5);
+  color: rgba(255, 100, 100, 1);
+}
+
 /* Theme buttons */
 .theme-buttons {
   display: flex;
@@ -338,6 +358,18 @@
   color: rgba(0, 0, 0, 0.9);
 }
 
+[data-theme="light"] .reset-button {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(200, 50, 50, 0.3);
+  color: rgba(200, 50, 50, 0.8);
+}
+
+[data-theme="light"] .reset-button:hover {
+  background: rgba(200, 50, 50, 0.08);
+  border-color: rgba(200, 50, 50, 0.5);
+  color: rgba(200, 50, 50, 1);
+}
+
 /* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
   [data-theme="auto"] .settings-button {
@@ -429,5 +461,17 @@
   [data-theme="auto"] .theme-button.active {
     background: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.9);
+  }
+
+  [data-theme="auto"] .reset-button {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(200, 50, 50, 0.3);
+    color: rgba(200, 50, 50, 0.8);
+  }
+
+  [data-theme="auto"] .reset-button:hover {
+    background: rgba(200, 50, 50, 0.08);
+    border-color: rgba(200, 50, 50, 0.5);
+    color: rgba(200, 50, 50, 1);
   }
 }
