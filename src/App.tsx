@@ -3,18 +3,18 @@ import { useTime } from './hooks/useTime'
 import MechanicalClock from './components/MechanicalClock'
 import DigitalClock from './components/DigitalClock'
 import DateDisplay from './components/DateDisplay'
-import Settings, { type ClockSettings } from './components/Settings'
+import Settings from './components/Settings'
+import { type ClockSettings, loadSettings, saveSettings } from './utils/settings'
 import './App.css'
 
 function App() {
   const time = useTime()
-  const [settings, setSettings] = useState<ClockSettings>({
-    showAnalog: true,
-    showDigital: false,
-    showDate: false,
-    clockScale: 1,
-    theme: 'auto',
-  })
+  const [settings, setSettings] = useState<ClockSettings>(loadSettings)
+
+  // Save settings to localStorage whenever they change
+  useEffect(() => {
+    saveSettings(settings)
+  }, [settings])
 
   // Apply theme to document
   useEffect(() => {
@@ -29,17 +29,19 @@ function App() {
 
       <div className="clock-display">
         {settings.showAnalog && (
-          <MechanicalClock time={time} scale={settings.clockScale} />
+          <MechanicalClock time={time} scale={settings.analogScale} />
         )}
         {settings.showDigital && (
-          <DigitalClock time={time} scale={settings.clockScale} />
+          <DigitalClock time={time} scale={settings.digitalScale} />
         )}
         {!hasVisibleClock && (
           <div className="no-clock-message">
             Enable a clock in settings
           </div>
         )}
-        {settings.showDate && hasVisibleClock && <DateDisplay time={time} />}
+        {settings.showDate && hasVisibleClock && (
+          <DateDisplay time={time} scale={settings.dateScale} />
+        )}
       </div>
     </main>
   )

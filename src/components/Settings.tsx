@@ -1,15 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import type { ClockSettings, Theme } from '../utils/settings';
 import './Settings.css';
-
-export type Theme = 'auto' | 'light' | 'dark';
-
-export interface ClockSettings {
-  showAnalog: boolean;
-  showDigital: boolean;
-  showDate: boolean;
-  clockScale: number;
-  theme: Theme;
-}
 
 interface SettingsProps {
   settings: ClockSettings;
@@ -69,8 +60,8 @@ function Settings({ settings, onChange }: SettingsProps) {
     onChange({ ...settings, [key]: !settings[key] });
   };
 
-  const handleScaleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange({ ...settings, clockScale: parseFloat(e.target.value) });
+  const handleScaleChange = (key: 'analogScale' | 'digitalScale' | 'dateScale', value: number) => {
+    onChange({ ...settings, [key]: value });
   };
 
   const handleThemeChange = (theme: Theme) => {
@@ -147,16 +138,48 @@ function Settings({ settings, onChange }: SettingsProps) {
             <div className="settings-section advanced">
               <div className="settings-group">
                 <label className="settings-label">
-                  Clock Size
-                  <span className="settings-value">{Math.round(settings.clockScale * 100)}%</span>
+                  Analog Size
+                  <span className="settings-value">{Math.round(settings.analogScale * 100)}%</span>
                 </label>
                 <input
                   type="range"
                   min="0.5"
                   max="3"
                   step="0.1"
-                  value={settings.clockScale}
-                  onChange={handleScaleChange}
+                  value={settings.analogScale}
+                  onChange={(e) => handleScaleChange('analogScale', parseFloat(e.target.value))}
+                  className="settings-slider"
+                />
+              </div>
+
+              <div className="settings-group">
+                <label className="settings-label">
+                  Digital Size
+                  <span className="settings-value">{Math.round(settings.digitalScale * 100)}%</span>
+                </label>
+                <input
+                  type="range"
+                  min="0.5"
+                  max="3"
+                  step="0.1"
+                  value={settings.digitalScale}
+                  onChange={(e) => handleScaleChange('digitalScale', parseFloat(e.target.value))}
+                  className="settings-slider"
+                />
+              </div>
+
+              <div className="settings-group">
+                <label className="settings-label">
+                  Date Size
+                  <span className="settings-value">{Math.round(settings.dateScale * 100)}%</span>
+                </label>
+                <input
+                  type="range"
+                  min="0.5"
+                  max="3"
+                  step="0.1"
+                  value={settings.dateScale}
+                  onChange={(e) => handleScaleChange('dateScale', parseFloat(e.target.value))}
                   className="settings-slider"
                 />
               </div>

@@ -118,11 +118,11 @@
 }
 
 [data-theme="light"] .hour-number {
-  fill: #8b7355;
+  fill: #0d7377;
 }
 
 [data-theme="light"] .hour-marker {
-  stroke: #8b7355;
+  stroke: #0d7377;
 }
 
 [data-theme="light"] .hour-hand {
@@ -147,7 +147,7 @@
 }
 
 [data-theme="light"] .center-cap-inner {
-  fill: #8b7355;
+  fill: #0d7377;
 }
 
 [data-theme="light"] .screw {
@@ -180,11 +180,11 @@
   }
 
   [data-theme="auto"] .hour-number {
-    fill: #8b7355;
+    fill: #0d7377;
   }
 
   [data-theme="auto"] .hour-marker {
-    stroke: #8b7355;
+    stroke: #0d7377;
   }
 
   [data-theme="auto"] .hour-hand {
@@ -209,7 +209,7 @@
   }
 
   [data-theme="auto"] .center-cap-inner {
-    fill: #8b7355;
+    fill: #0d7377;
   }
 
   [data-theme="auto"] .screw {

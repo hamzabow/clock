@@ -285,8 +285,8 @@
 }
 
 [data-theme="light"] .settings-option input:checked + .checkbox-custom {
-  background: #8b7355;
-  border-color: #8b7355;
+  background: #0d7377;
+  border-color: #0d7377;
 }
 
 [data-theme="light"] .settings-option input:checked + .checkbox-custom::after {
@@ -314,11 +314,11 @@
 }
 
 [data-theme="light"] .settings-slider::-webkit-slider-thumb {
-  background: #8b7355;
+  background: #0d7377;
 }
 
 [data-theme="light"] .settings-slider::-moz-range-thumb {
-  background: #8b7355;
+  background: #0d7377;
 }
 
 [data-theme="light"] .theme-buttons {
@@ -378,8 +378,8 @@
   }
 
   [data-theme="auto"] .settings-option input:checked + .checkbox-custom {
-    background: #8b7355;
-    border-color: #8b7355;
+    background: #0d7377;
+    border-color: #0d7377;
   }
 
   [data-theme="auto"] .settings-option input:checked + .checkbox-custom::after {
@@ -407,11 +407,11 @@
   }
 
   [data-theme="auto"] .settings-slider::-webkit-slider-thumb {
-    background: #8b7355;
+    background: #0d7377;
   }
 
   [data-theme="auto"] .settings-slider::-moz-range-thumb {
-    background: #8b7355;
+    background: #0d7377;
   }
 
   [data-theme="auto"] .theme-buttons {
